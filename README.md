@@ -1,13 +1,15 @@
+```text
 -- Dispatcher / protocol --
 0x14041bd00   main game-packet dispatcher (custom opcodes 0x5DD-0x634, jump table @ 0x14041ddfc)
 0x14041ae60   ProtocolGame connect path (auto-fires fingerprint upload)
 0x14042edb0   ProtocolGame::parseGameServerCheckBot        (opcode 0x5EA)
-0x1404474f0   sendProcessList                              (reply opcode 0x50)
-0x140447660   sendModuleList                               (reply opcode 0x51)
-0x1404477d0   sendWindowList                               (reply opcode 0x52)
+0x1404474f0   sendProcessList                               (reply opcode 0x50)
+0x140447660   sendModuleList                                (reply opcode 0x51)
+0x1404477d0   sendWindowList                                (reply opcode 0x52)
 0x14046d620   OutputMessage ctor
 0x14041ac40   addU8 (opcode writer)
-0x140733de0   addU16 / count writer      0x140733fc0   addString
+0x140733de0   addU16 / count writer
+0x140733fc0   addString
 
 -- Collectors (HWID/environment cluster) --
 0x140752f20   process enumerator (Toolhelp32)
@@ -35,17 +37,26 @@
 
 -- Bot protection / integrity --
 0x1402daae0   checkBotProtection native guard
-0x141ffd7c0   guard byte A               0x143754925   guard byte B
+0x141ffd7c0   guard byte A
+0x143754925   guard byte B
 0x141da5b10   "caught a lua call..." log string
-0x140510520   selfChecksum               0x14050e4b0   filesChecksums
-0x14050e080   fileChecksum               0x14041acc0   enableChecksum
+0x140510520   selfChecksum
+0x14050e4b0   filesChecksums
+0x14050e080   fileChecksum
+0x14041acc0   enableChecksum
 
 -- Strings --
-0x141e27748   BAD_PROCESSES              0x141e27758   BAD_DLLS
-0x141e27768   DLL_CHECKSUM               0x141e27778   BAD_FILES
+0x141e27748   BAD_PROCESSES
+0x141e27758   BAD_DLLS
+0x141e27768   DLL_CHECKSUM
+0x141e27778   BAD_FILES
 0x141db2050   mangled parseGameServerCheckBot symbol
-0x141dac168   checkBotProtection         0x141e1cc78   getHWID
-0x141e1cce0   isProcessRunning           0x141e1cc50   getMacAddresses
-0x141e1d218   filesChecksums             0x141e1d228   fileChecksum
-0x141e1d338   selfChecksum               0x141e1f558   enableChecksum
+0x141dac168   checkBotProtection
+0x141e1cc78   getHWID
+0x141e1cce0   isProcessRunning
+0x141e1cc50   getMacAddresses
+0x141e1d218   filesChecksums
+0x141e1d228   fileChecksum
+0x141e1d338   selfChecksum
+0x141e1f558   enableChecksum
 0x141db3730   "getLoginExtendedData"
